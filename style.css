@@ -1,0 +1,12 @@
+.navigation ul li {
+        background-color: orangered;
+        border-radius: 5px;
+        margin: 5px;
+}
+
+.navigation ul li:hover {
+        background-color: darkmagenta;
+        transform: scale(1.1);
+        transition: transform 2s;
+        font-weight: bold;
+}
