@@ -31,18 +31,31 @@
                                 <span class="navbar-toggler-icon"></span>
                         </button>
                         <div class="collapse navbar-collapse navigation" id="navbarSupportedContent">
-                                <ul class="navbar-nav ms-auto">
+                                <ul class="navbar-nav ms-auto text-center">
                                         <li class="nav-item">
                                                 <a class="nav-link active" aria-current="page" href="#">Home</a>
                                         </li>
-
+                                        <li class="nav-item">
+                                                <a class="nav-link active" aria-current="page" href="#">Products</a>
+                                        </li>
+                                        <li class="nav-item">
+                                                <a class="nav-link active" aria-current="page" href="#">About Us</a>
+                                        </li>
+                                        <li onclick="myCart()" class="nav-item">
+                                                <a class="nav-link active" aria-current="page" href="#">My-Cart</a>
+                                        </li>
+                                        <li class="nav-item">
+                                                <a class="nav-link active" aria-current="page" href="#"><i
+                                                                class="fas fa-cart-plus"><span class="orange"> 2
+                                                                </span></i></a>
+                                        </li>
                                 </ul>
                         </div>
                 </div>
         </nav>
 
         <!-- Main Section Start -->
-        <main>
+        <main id="main-part">
                 <!-- Background Image -->
                 <section id="bg-section" class="mt-5">
                         <div class="cover mt-5 pt-5">
@@ -93,12 +106,15 @@
                                                         <button type="button" class="btn btn-danger" id="add-cart">Add
                                                                 Cart</button>
                                                 </div>
-                                                <div class="">
-                                                        <small class="text-muted">Last updated 3 mins
-                                                                ago</small>
+
+                                                <div class="card-footer">
+                                                        <button class="product-color"></button>
+                                                        <button class="product-color"></button>
+                                                        <button class="product-color"></button>
                                                 </div>
 
                                         </div>
+
                                 </div>
                         </div>
                 </section>

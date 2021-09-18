@@ -8,12 +8,18 @@ body {
         margin: 5px;
 } */
 
-/* .navigation ul li:hover {
-        background-color: darkmagenta;
-        transform: scale(1.05);
+.product-color {
+        background-color: aqua;
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+}
+
+.navbar ul li:hover {
+        color: orangered;
+        transform: scale(1.15);
         transition: transform 2s;
-        font-weight: bold;
-} */
+}
 
 .orange {
         color: orangered;

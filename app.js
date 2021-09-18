@@ -7,7 +7,7 @@ fetch(`https://makeup-api.herokuapp.com/api/v1/products.json?brand=maybelline`)
 
 // Display Product Data:
 const displayProduct = (products) => {
-        productContainer.textContent = '';
+        // productContainer.textContent = '';
         console.log(products[0]);
         products.forEach((product) => {
                 const { brand, name, price, image_link } = product;
@@ -25,7 +25,7 @@ const displayProduct = (products) => {
                                                 <p class="m-0 p-0">Brand Name: ${brand}</p>
                                                 
                                                 <div class="d-flex justify-content-between mt-3">
-                                                        <h3 class="product-price">$${price}</h3>
+                                                        <h3 class="product-price">$${price ? price : 20.99}</h3>
                                                         <button type="button" class="btn btn-danger fw-bold" id="add-cart"><i class="fas fa-cart-plus"></i> Add
                                                                 Cart</button>
                                                 </div>
@@ -50,13 +50,16 @@ const singleItem = (url, itemName) => {
 }
 
 const displaySingleItem = (products, itemName) => {
-        console.log(itemName)
         const readyItems = document.getElementById('ready-items');
         readyItems.innerHTML = `<span class="orange">${itemName}</span>'s are ready in below...`
         productContainer.textContent = '';
-        console.log(products[0]);
+        // console.log(products[0].product_colors.length);
         products.forEach((product) => {
+                // Destructure Value
                 const { brand, name, price, image_link } = product;
+                const { product_colors } = product;
+                // console.log(product_colors);//That is Array
+
                 const productDiv = document.createElement('div');
                 productDiv.innerHTML = `
                                 <div class="col">
@@ -69,12 +72,14 @@ const displaySingleItem = (products, itemName) => {
                                                         <h5 class="card-title">${name}</h5>
                                                 </div>
                                                 <p class="m-0 p-0">Brand Name: ${brand}</p>
-                                                <h3 class="product-price">$${price ? price : 20.99}</h3>
-                                                <button type="button" class="btn btn-danger fw-bold" id="add-cart"><i class="fas fa-cart-plus"></i> Add
-                                                        Cart</button>
+                                                <div class="d-flex justify-content-between mt-3">
+                                                        <h3 class="product-price">$${price ? price : 20.99}</h3>
+                                                        <button type="button" class="btn btn-danger fw-bold" id="add-cart"><i class="fas fa-cart-plus"></i> Add
+                                                                Cart</button>
+                                                </div>
                                         </div>
-                                        <div class="">
-                                                <small class="text-muted">Last updated 3 mins ago</small>
+                                        <div class="text-center" id="product-color-container">
+                                        
                                         </div>
 
                                 </div>
@@ -82,4 +87,10 @@ const displaySingleItem = (products, itemName) => {
                 `;
                 productContainer.appendChild(productDiv);
         })
+}
+
+// My Cart: 
+const myCart = () => {
+        const mainPart = document.getElementById('main-part');
+        mainPart.textContent = '';
 }
