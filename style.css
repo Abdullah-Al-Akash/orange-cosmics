@@ -35,6 +35,15 @@
         text-align: center;
 }
 
+.product-image img {
+        height: 180px;
+        width: 180px;
+}
+
 .product-name {
         height: 50px;
+}
+
+.product-price {
+        color: darkmagenta;
 }
