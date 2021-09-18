@@ -56,7 +56,7 @@ const displaySingleItem = (products) => {
                                 <div class="col">
                                 <div class="h-100 product-card">
                                         <div class="product-image">
-                                                <img src="${image_link}" class="img-fluid" alt="...">
+                                                <img src="${image_link}" class="img-fluid pt-3" alt="...">
                                         </div>
                                         <div class="card-body">
                                                 <div class="product-name overflow-hidden">
