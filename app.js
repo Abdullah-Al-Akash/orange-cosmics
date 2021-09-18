@@ -16,16 +16,19 @@ const displayProduct = (products) => {
                                 <div class="col">
                                 <div class="h-100 product-card">
                                         <div class="product-image">
-                                                <img src="${image_link}" class="img-fluid" alt="...">
+                                        <img src="${image_link}" class="img-fluid pt-3" alt="...">
                                         </div>
                                         <div class="card-body">
                                                 <div class="product-name overflow-hidden">
                                                         <h5 class="card-title">${name}</h5>
                                                 </div>
                                                 <p class="m-0 p-0">Brand Name: ${brand}</p>
-                                                <h3 class="product-price">$${price}</h3>
-                                                <button type="button" class="btn btn-danger fw-bold" id="add-cart">Add
-                                                        Cart</button>
+                                                
+                                                <div class="d-flex justify-content-between mt-3">
+                                                        <h3 class="product-price">$${price}</h3>
+                                                        <button type="button" class="btn btn-danger fw-bold" id="add-cart"><i class="fas fa-cart-plus"></i> Add
+                                                                Cart</button>
+                                                </div>
                                         </div>
                                         <div class="">
                                                 <small class="text-muted">Last updated 3 mins ago</small>
@@ -39,14 +42,17 @@ const displayProduct = (products) => {
 }
 
 // Loaded Item Products By Menu Click:
-const singleItem = (url) => {
+const singleItem = (url, itemName) => {
         // console.log(url)
         fetch(url)
                 .then(res => res.json())
-                .then(data => displaySingleItem(data))
+                .then(data => displaySingleItem(data, itemName))
 }
 
-const displaySingleItem = (products) => {
+const displaySingleItem = (products, itemName) => {
+        console.log(itemName)
+        const readyItems = document.getElementById('ready-items');
+        readyItems.innerHTML = `<span class="orange">${itemName}</span>'s are ready in below...`
         productContainer.textContent = '';
         console.log(products[0]);
         products.forEach((product) => {
@@ -64,7 +70,7 @@ const displaySingleItem = (products) => {
                                                 </div>
                                                 <p class="m-0 p-0">Brand Name: ${brand}</p>
                                                 <h3 class="product-price">$${price ? price : 20.99}</h3>
-                                                <button type="button" class="btn btn-danger fw-bold" id="add-cart">Add
+                                                <button type="button" class="btn btn-danger fw-bold" id="add-cart"><i class="fas fa-cart-plus"></i> Add
                                                         Cart</button>
                                         </div>
                                         <div class="">

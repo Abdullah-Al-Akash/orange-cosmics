@@ -15,6 +15,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
@@ -46,27 +47,31 @@
                 <section id="bg-section" class="mt-5">
                         <div class="cover mt-5 pt-5">
                                 <div class="container h-100 d-flex justify-content-center align-items-center">
+
                                         <div class="">
-                                                <button onclick="singleItem('https://makeup-api.herokuapp.com/api/v1/products.json?product_type=blush')"
+                                                <h1 class="text-center mb-5 text-white">Choose Your <span
+                                                                class="orange">Items</span></h1>
+                                                <button onclick="singleItem('https://makeup-api.herokuapp.com/api/v1/products.json?product_type=blush', 'Blush')"
                                                         id="items" class="btn btn-danger m-2">Blush</button>
-                                                <button onclick="singleItem('https://makeup-api.herokuapp.com/api/v1/products.json?product_type=bronzer')"
+                                                <button onclick="singleItem('https://makeup-api.herokuapp.com/api/v1/products.json?product_type=bronzer', 'Bronzer')"
                                                         id="items" class="btn btn-danger m-2">Bronzer</button>
-                                                <button onclick="singleItem('https://makeup-api.herokuapp.com/api/v1/products.json?product_type=eyebrow')"
+                                                <button onclick="singleItem('https://makeup-api.herokuapp.com/api/v1/products.json?product_type=eyebrow', 'Eyebrow')"
                                                         id="items" class="btn btn-danger m-2">Eyebrow</button>
-                                                <button onclick="singleItem('https://makeup-api.herokuapp.com/api/v1/products.json?product_type=eyeliner')"
+                                                <button onclick="singleItem('https://makeup-api.herokuapp.com/api/v1/products.json?product_type=eyeliner', 'Eyeliner')"
                                                         id="items" class="btn btn-danger m-2">Eyeliner</button>
-                                                <button onclick="singleItem('https://makeup-api.herokuapp.com/api/v1/products.json?product_type=eyeshadow')"
+                                                <button onclick="singleItem('https://makeup-api.herokuapp.com/api/v1/products.json?product_type=eyeshadow', 'Eyeshadow')"
                                                         id="items" class="btn btn-danger m-2">Eyeshadow</button> <br>
-                                                <button onclick="singleItem('https://makeup-api.herokuapp.com/api/v1/products.json?product_type=foundation')"
+                                                <button onclick="singleItem('https://makeup-api.herokuapp.com/api/v1/products.json?product_type=foundation', 'Foundation')"
                                                         id="items" class="btn btn-danger m-2">Foundation</button>
-                                                <button onclick="singleItem('https://makeup-api.herokuapp.com/api/v1/products.json?product_type=lip_liner')"
+                                                <button onclick="singleItem('https://makeup-api.herokuapp.com/api/v1/products.json?product_type=lip_liner', 'Lip liner')"
                                                         id="items" class="btn btn-danger m-2">Lip liner</button>
-                                                <button onclick="singleItem('https://makeup-api.herokuapp.com/api/v1/products.json?product_type=lipstick')"
+                                                <button onclick="singleItem('https://makeup-api.herokuapp.com/api/v1/products.json?product_type=lipstick', 'Lipstick')"
                                                         id="items" class="btn btn-danger m-2">Lipstick</button>
-                                                <button onclick="singleItem('https://makeup-api.herokuapp.com/api/v1/products.json?product_type=mascara')"
+                                                <button onclick="singleItem('https://makeup-api.herokuapp.com/api/v1/products.json?product_type=mascara', 'Mascara')"
                                                         id="items" class="btn btn-danger m-2">Mascara</button>
-                                                <button onclick="singleItem('https://makeup-api.herokuapp.com/api/v1/products.json?product_type=nail_polish')"
+                                                <button onclick="singleItem('https://makeup-api.herokuapp.com/api/v1/products.json?product_type=nail_polish', 'Nail Polish')"
                                                         id="items" class="btn btn-danger m-2">Nail Polish</button>
+                                                <h4 class="text-white text-center mt-5" id="ready-items"></h4>
                                         </div>
                                 </div>
                         </div>
@@ -108,6 +113,8 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
                 integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
                 crossorigin="anonymous"></script>
+        <!-- Fontawesome -->
+        <script src="https://kit.fontawesome.com/783f1de6e0.js" crossorigin="anonymous"></script>
         <!-- Javascript -->
         <script src="app.js"></script>
 </body>
