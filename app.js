@@ -86,7 +86,7 @@ const displaySingleItem = (products, itemName) => {
                                                 <p class="m-0 p-0">Brand Name: ${brand}</p>
                                                 <div class="d-flex justify-content-between mt-3">
                                                         <h3 class="product-price">$${price ? price : 20.99}</h3>
-                                                        <button onclick="addToCartProduct('${product.price ? product.price : 10}')" type="button" class="btn btn-danger fw-bold" id="add-cart">
+                                                        <button onclick="addToCartProduct('${price}')" type="button" class="btn btn-danger fw-bold" id="add-cart">
                                                                 <i class="fas fa-cart-plus"></i> Add
                                                                 Cart
                                                         </button>
@@ -115,8 +115,9 @@ let totalProductCount = 0;
 const productCountContainer = document.getElementById('product-count');
 // Click Add to Cart and Pass Value:
 const addToCartProduct = (price) => {
+        // console.log(price);
         totalPrice = totalPrice + (+price);
-        console.log(totalPrice);
         totalProductCount = totalProductCount + 1;
         productCountContainer.innerText = totalProductCount;
+        localStorage.setItem('totalCost', totalPrice);
 }
