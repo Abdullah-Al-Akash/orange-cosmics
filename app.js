@@ -1,4 +1,18 @@
 const productContainer = document.getElementById('product-container');
+const coverSection = document.getElementById('bg-section');
+const displayProductSection = document.getElementById('display-product');
+const productPriceContainer = document.getElementById('product-price');
+const cartContainer = document.getElementById('cart-container');
+
+// Display None and Block Setup:
+const displayNone = id => {
+        id.style.display = 'none';
+}
+const displayBlock = id => {
+        id.style.display = 'block';
+}
+// Initially Display None Cart Section:
+displayNone(cartContainer);
 
 // Load Default Display Data:
 fetch(`https://makeup-api.herokuapp.com/api/v1/products.json?brand=maybelline`)
@@ -105,19 +119,32 @@ const displaySingleItem = (products, itemName) => {
 }
 
 // My Cart: 
-// const myCart = () => {
-//         const mainPart = document.getElementById('main-part');
-//         mainPart.textContent = '';
-// }
+const myCart = () => {
+        displayNone(coverSection);
+        displayNone(displayProductSection);
+        displayBlock(cartContainer);
+}
 
 let totalPrice = 0;
 let totalProductCount = 0;
 const productCountContainer = document.getElementById('product-count');
 // Click Add to Cart and Pass Value:
 const addToCartProduct = (price) => {
-        // console.log(price);
+        console.log(price);
         totalPrice = totalPrice + (+price);
         totalProductCount = totalProductCount + 1;
         productCountContainer.innerText = totalProductCount;
         localStorage.setItem('totalCost', totalPrice);
+
+        // Set All Product In Cart:
+        const priceDiv = document.createElement('div');
+        priceDiv.innerHTML = `${price}`;
+        productPriceContainer.appendChild(priceDiv);
+}
+
+// Home Section:
+const displayHomePart = () => {
+        displayNone(cartContainer);
+        displayBlock(coverSection);
+        displayBlock(displayProductSection);
 }

@@ -55,6 +55,14 @@ body {
         font-size: 60px;
 }
 
+/* Add Cart Style Start*/
+
+#cart-container {
+        margin-top: 20%;
+}
+
+/* Add Cart Style End*/
+
 /* Product Card Style */
 
 .product-card {

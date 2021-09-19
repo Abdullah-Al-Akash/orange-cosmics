@@ -22,7 +22,7 @@
         <!-- Navbar -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
                 <div class="container">
-                        <a class="navbar-brand" href="#">
+                        <a onclick="displayHomePart()" class="navbar-brand" href="#">
                                 <h3>Makeup</h3>
                         </a>
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -32,7 +32,7 @@
                         </button>
                         <div class="collapse navbar-collapse navigation" id="navbarSupportedContent">
                                 <ul class="navbar-nav ms-auto text-center">
-                                        <li class="nav-item">
+                                        <li onclick="displayHomePart()" class="nav-item">
                                                 <a class="nav-link active" aria-current="page" href="#">Home</a>
                                         </li>
                                         <li class="nav-item">
@@ -90,8 +90,20 @@
                                 </div>
                         </div>
                 </section>
+                <!-- Cart Section -->
+                <section id="cart-container" class="container">
+                        <div class="row">
+                                <div id="product-name" class="col-lg-6">
+
+                                </div>
+                                <div id="product-price" class="col-lg-6">
+
+                                </div>
+                                <hr>
+                        </div>
+                </section>
                 <!-- Display Product -->
-                <section class="container mt-5">
+                <section id="display-product" class="container mt-5">
                         <div class="row row-cols-1 row-cols-md-4 row-cols-lg-4 g-5" id="product-container">
                                 <!-- <div class="col">
                                         <div class="h-100 product-card">
