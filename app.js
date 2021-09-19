@@ -10,7 +10,13 @@ const displayProduct = (products) => {
         // productContainer.textContent = '';
         console.log(products[0]);
         products.forEach((product) => {
-                const { brand, name, price, image_link } = product;
+                const { brand, name, price, image_link, product_colors } = product;
+                // Product Color Code:
+                const colorName = product_colors.splice(0, 3);
+                const firstColor = colorName[0]?.hex_value;
+                const secondColor = colorName[1]?.hex_value;
+                const thirdColor = colorName[2]?.hex_value;
+
                 const productDiv = document.createElement('div');
                 productDiv.innerHTML = `
                                 <div class="col">
@@ -26,12 +32,14 @@ const displayProduct = (products) => {
                                                 
                                                 <div class="d-flex justify-content-between mt-3">
                                                         <h3 class="product-price">$${price ? price : 20.99}</h3>
-                                                        <button type="button" class="btn btn-danger fw-bold" id="add-cart"><i class="fas fa-cart-plus"></i> Add
+                                                        <button onclick="addToCartProduct('${product.price ? product.price : 10}')" type="button" class="btn btn-danger fw-bold" id="add-cart"><i class="fas fa-cart-plus"></i> Add
                                                                 Cart</button>
                                                 </div>
                                         </div>
-                                        <div class="">
-                                                <small class="text-muted">Last updated 3 mins ago</small>
+                                        <div class="text-center d-flex justify-content-center pb-3" id="product-color-container">
+                                                <p class="product-color" style="background-color: ${firstColor ? firstColor : 'hotpink'}"></p>
+                                                <p class="product-color" style="background-color: ${secondColor}"></p>
+                                                <p class="product-color" style="background-color: ${thirdColor}"></p>
                                         </div>
 
                                 </div>
@@ -78,18 +86,17 @@ const displaySingleItem = (products, itemName) => {
                                                 <p class="m-0 p-0">Brand Name: ${brand}</p>
                                                 <div class="d-flex justify-content-between mt-3">
                                                         <h3 class="product-price">$${price ? price : 20.99}</h3>
-                                                        <button onclick="addToCartProduct('${product.price}, ${product.name}')" type="button" class="btn btn-danger fw-bold" id="add-cart">
+                                                        <button onclick="addToCartProduct('${product.price ? product.price : 10}')" type="button" class="btn btn-danger fw-bold" id="add-cart">
                                                                 <i class="fas fa-cart-plus"></i> Add
                                                                 Cart
                                                         </button>
                                                 </div>
                                         </div>
                                         <div class="text-center d-flex justify-content-center pb-3" id="product-color-container">
-                                                <p class="product-color" style="background-color: ${firstColor ? firstColor : 'orangered'}"></p>
+                                                <p class="product-color" style="background-color: ${firstColor ? firstColor : 'hotpink'}"></p>
                                                 <p class="product-color" style="background-color: ${secondColor}"></p>
                                                 <p class="product-color" style="background-color: ${thirdColor}"></p>
                                         </div>
-
                                 </div>
                         </div>
                 `;
@@ -103,7 +110,13 @@ const displaySingleItem = (products, itemName) => {
 //         mainPart.textContent = '';
 // }
 
+let totalPrice = 0;
+let totalProductCount = 0;
+const productCountContainer = document.getElementById('product-count');
 // Click Add to Cart and Pass Value:
-const addToCartProduct = (price, name) => {
-        console.log(price, name);
+const addToCartProduct = (price) => {
+        totalPrice = totalPrice + (+price);
+        console.log(totalPrice);
+        totalProductCount = totalProductCount + 1;
+        productCountContainer.innerText = totalProductCount;
 }

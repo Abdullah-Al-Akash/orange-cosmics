@@ -2,11 +2,9 @@ body {
         font-family: 'Poppins', sans-serif;
 }
 
-/* .navigation ul li {
-        background-color: orangered;
-        border-radius: 5px;
-        margin: 5px;
-} */
+#product-count {
+        font-size: 25px;
+}
 
 .single-color {
         border: 2px solid orange;
