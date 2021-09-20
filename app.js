@@ -4,6 +4,9 @@ const displayProductSection = document.getElementById('display-product');
 const productPriceContainer = document.getElementById('product-price');
 const cartContainer = document.getElementById('cart-container');
 const productNameContainer = document.getElementById('product-name');
+const cartTitle = document.getElementById('cart-title');
+const totalPriceInCart = document.getElementById('total-price');
+const cartDetails = document.getElementById('cart-details');
 
 // Display None and Block Setup:
 const displayNone = id => {
@@ -47,7 +50,7 @@ const displayProduct = (products) => {
                                                 
                                                 <div class="d-flex justify-content-between mt-3">
                                                         <h3 class="product-price">$${price ? price : 20.99}</h3>
-                                                        <button onclick="addToCartProduct('${product.price ? product.price : 10}')" type="button" class="btn btn-danger fw-bold" id="add-cart"><i class="fas fa-cart-plus"></i> Add
+                                                        <button onclick="addToCartProduct('${name ? name : 'Emty Name'}','${price ? price : '20.99'}')" type="button" class="btn btn-danger fw-bold" id="add-cart"><i class="fas fa-cart-plus"></i> Add
                                                                 Cart</button>
                                                 </div>
                                         </div>
@@ -100,7 +103,7 @@ const displaySingleItem = (products, itemName) => {
                                                 </div>
                                                 <p class="m-0 p-0">Brand Name: ${brand}</p>
                                                 <div class="d-flex justify-content-between mt-3">
-                                                        <h3 class="product-price">$${price ? price : 20.99}</h3>
+                                                        <h3 class="product-price">$${price ? price : '20.99'}</h3>
                                                         <button onclick="addToCartProduct('${name}','${price}')" type="button" class="btn btn-danger fw-bold" id="add-cart">
                                                                 <i class="fas fa-cart-plus"></i> Add
                                                                 Cart
@@ -131,20 +134,28 @@ let totalProductCount = 0;
 const productCountContainer = document.getElementById('product-count');
 // Click Add to Cart and Pass Value:
 const addToCartProduct = (name, price) => {
-        console.log(name);
+        displayNone(cartTitle);
         totalPrice = totalPrice + (+price);
         totalProductCount = totalProductCount + 1;
         productCountContainer.innerText = totalProductCount;
-        localStorage.setItem('totalCost', totalPrice);
 
-        // Set Single Price In Cart:
-        const priceDiv = document.createElement('div');
-        priceDiv.innerHTML = `<h6>${price}</h6>`;
-        productPriceContainer.appendChild(priceDiv);
-        // Set Product Name in Cart:
-        const productNameDiv = document.createElement('div');
-        productNameDiv.innerHTML = `<h6>${name}</h6>`;
-        productNameContainer.appendChild(productNameDiv);
+        // Set Single Price In Cart Details:
+        const cartItemDiv = document.createElement('div');
+        cartItemDiv.innerHTML = `
+                <div class="row">
+                        <div class="col-1"><h6>${totalProductCount}</h6></div>
+                        <div class="col-8"><h6>${name}</h6></div>
+                        <div class="col-3"><h6>$ ${price}</h6></div>
+                </div>
+                <hr/>
+        `;
+        cartDetails.appendChild(cartItemDiv);
+
+        // Set Total Price:
+        totalPriceInCart.innerHTML = `
+                <h4>$ ${totalPrice.toFixed(2)}</h4>
+        `;
+        console.log(totalPrice)
 
 }
 
