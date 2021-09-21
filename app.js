@@ -7,6 +7,8 @@ const cartContainer = document.getElementById('cart-container');
 const cartTitle = document.getElementById('cart-title');
 const totalPriceInCart = document.getElementById('total-price');
 const cartDetails = document.getElementById('cart-details');
+const confirmSection = document.getElementById('confirm-section');
+const confirmBtn = document.getElementById('confirm-btn');
 
 // Display None and Block Setup:
 const displayNone = id => {
@@ -17,6 +19,7 @@ const displayBlock = id => {
 }
 // Initially Display None Cart Section:
 displayNone(cartContainer);
+displayNone(confirmSection);
 
 // Load Default Display Data:
 fetch(`https://makeup-api.herokuapp.com/api/v1/products.json?brand=maybelline`)
@@ -76,7 +79,7 @@ const singleItem = (url, itemName) => {
 }
 
 const displaySingleItem = (products, itemName) => {
-
+        // Title Text in BG:
         const readyItems = document.getElementById('ready-items');
         readyItems.innerHTML = `<span class="orange">${itemName}</span>'s are ready in below...`
         productContainer.textContent = '';
@@ -89,7 +92,7 @@ const displaySingleItem = (products, itemName) => {
                 const firstColor = colorName[0]?.hex_value;
                 const secondColor = colorName[1]?.hex_value;
                 const thirdColor = colorName[2]?.hex_value;
-
+                // Create Single Product
                 const productDiv = document.createElement('div');
                 productDiv.innerHTML = `
                                 <div class="col">
@@ -127,6 +130,7 @@ const myCart = () => {
         displayNone(coverSection);
         displayNone(displayProductSection);
         displayBlock(cartContainer);
+        // displayBlock(confirmSection)
 }
 
 let totalPrice = 0;
@@ -135,6 +139,7 @@ const productCountContainer = document.getElementById('product-count');
 // Click Add to Cart and Pass Value:
 const addToCartProduct = (name, price) => {
         displayNone(cartTitle);
+
         totalPrice = totalPrice + (+price);
         totalProductCount = totalProductCount + 1;
         productCountContainer.innerText = totalProductCount;
@@ -157,11 +162,26 @@ const addToCartProduct = (name, price) => {
         `;
         console.log(totalPrice)
 
+        displayBlock(confirmSection);
+
 }
+
+// Confirm Section After Click:
+confirmBtn.addEventListener('click', function () {
+        const confirmMsg = document.getElementById('confirm-message');
+        const div = document.createElement('div');
+        div.innerHTML = `
+                <div style="height: 300px; width: 300px; margin-top: 5%">
+                        <img class="img-fluid" src="./images/confirm-emoji.png" alt="">
+                </div>
+        `
+        confirmMsg.appendChild(div);
+})
 
 // Home Section:
 const displayHomePart = () => {
         displayNone(cartContainer);
         displayBlock(coverSection);
         displayBlock(displayProductSection);
+        displayNone(confirmSection)
 }
