@@ -6,6 +6,17 @@ body {
         font-size: 25px;
 }
 
+nav a:hover {
+        cursor: pointer;
+}
+
+/* Loader */
+
+#loader img {
+        height: 220px;
+        width: 220px;
+}
+
 .single-color {
         border: 2px solid orange;
 }

@@ -9,6 +9,11 @@ const totalPriceInCart = document.getElementById('total-price');
 const cartDetails = document.getElementById('cart-details');
 const confirmSection = document.getElementById('confirm-section');
 const confirmBtn = document.getElementById('confirm-btn');
+const confirmMsg = document.getElementById('confirm-message');
+const loading = document.getElementById('loader');
+
+// Disable Confirm Button:
+confirmBtn.setAttribute('disabled', true);
 
 // Display None and Block Setup:
 const displayNone = id => {
@@ -28,7 +33,7 @@ fetch(`https://makeup-api.herokuapp.com/api/v1/products.json?brand=maybelline`)
 
 // Display Product Data:
 const displayProduct = (products) => {
-        // productContainer.textContent = '';
+        displayNone(loading);
         console.log(products[0]);
         products.forEach((product) => {
                 const { brand, name, price, image_link, product_colors } = product;
@@ -72,6 +77,8 @@ const displayProduct = (products) => {
 
 // Loaded Item Products By Menu Click:
 const singleItem = (url, itemName) => {
+        displayNone(displayProductSection)
+        displayBlock(loading)
         // console.log(url)
         fetch(url)
                 .then(res => res.json())
@@ -123,6 +130,8 @@ const displaySingleItem = (products, itemName) => {
                 `;
                 productContainer.appendChild(productDiv);
         })
+        displayNone(loading);
+        displayBlock(displayProductSection)
 }
 
 // My Cart: 
@@ -130,7 +139,7 @@ const myCart = () => {
         displayNone(coverSection);
         displayNone(displayProductSection);
         displayBlock(cartContainer);
-        // displayBlock(confirmSection)
+        displayBlock(confirmSection)
 }
 
 let totalPrice = 0;
@@ -139,6 +148,8 @@ const productCountContainer = document.getElementById('product-count');
 // Click Add to Cart and Pass Value:
 const addToCartProduct = (name, price) => {
         displayNone(cartTitle);
+        // Enable Confirm Button After Added Product:
+        confirmBtn.removeAttribute('disabled');
 
         totalPrice = totalPrice + (+price);
         totalProductCount = totalProductCount + 1;
@@ -168,14 +179,37 @@ const addToCartProduct = (name, price) => {
 
 // Confirm Section After Click:
 confirmBtn.addEventListener('click', function () {
-        const confirmMsg = document.getElementById('confirm-message');
+        displayNone(cartContainer);
+        displayNone(confirmSection);
+        displayBlock(confirmMsg);
         const div = document.createElement('div');
         div.innerHTML = `
-                <div style="height: 300px; width: 300px; margin-top: 5%">
-                        <img class="img-fluid" src="./images/confirm-emoji.png" alt="">
+                <div class="d-flex justify-content-center">
+                        <div style="margin-top: 5%">
+                                <img class="img-fluid" src="./images/giphy.gif" alt="">
+                        </div>
                 </div>
-        `
+                <div class="text-center mt-5">
+                        <h3 class="text-center">Thank You<h3>
+                        <h3 class="orange">Your Makeup Box is up</h3>
+                </div>
+                <div class="d-flex justify-content-center">
+                        <div style="margin-top: 3%; width: 350px">
+                                <img class="img-fluid" src="./images/confirm-emoji.png" alt="">
+                        </div>
+                </div>
+        `;
         confirmMsg.appendChild(div);
+        document.getElementById('home').addEventListener('click', () => {
+                location.reload();
+        });
+        document.getElementById('logo').addEventListener('click', () => {
+                location.reload();
+        });
+        document.getElementById('my-cart').addEventListener('click', () => {
+                displayNone(cartContainer);
+                window.scrollTo(0, 0);
+        })
 })
 
 // Home Section:
@@ -183,5 +217,6 @@ const displayHomePart = () => {
         displayNone(cartContainer);
         displayBlock(coverSection);
         displayBlock(displayProductSection);
-        displayNone(confirmSection)
+        displayNone(confirmSection);
+        displayNone(confirmMsg);
 }
