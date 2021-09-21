@@ -121,7 +121,7 @@ const displaySingleItem = (products, itemName) => {
                                                 </div>
                                         </div>
                                         <div class="text-center d-flex justify-content-center pb-3" id="product-color-container">
-                                                <p class="product-color" style="background-color: ${firstColor ? firstColor : 'hotpink'}"></p>
+                                                <p class="product-color" style="background-color: ${firstColor}"></p>
                                                 <p class="product-color" style="background-color: ${secondColor}"></p>
                                                 <p class="product-color" style="background-color: ${thirdColor}"></p>
                                         </div>
@@ -227,3 +227,5 @@ const displayHomePart = () => {
         displayNone(confirmSection);
         displayNone(confirmMsg);
 }
+
+// Text Animation:

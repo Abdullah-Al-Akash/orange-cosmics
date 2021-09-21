@@ -64,17 +64,23 @@ nav a:hover {
         }
 }
 
-#items {
+#bg-section .items {
         background: orangered;
 }
 
-#items:hover {
+#bg-section .items img {
+        height: 25px;
+        width: 25px;
+        border-radius: 50%;
+}
+
+#bg-section .items:hover {
         background-color: black;
         transform: scale(1.25);
         transition: transform 2s;
 }
 
-#items:active {
+.items:active {
         box-shadow: 5px 5px 5px black
 }
 
@@ -133,3 +139,5 @@ nav a:hover {
 #footer {
         margin-top: 280px;
 }
+
+/* Text Animation */
