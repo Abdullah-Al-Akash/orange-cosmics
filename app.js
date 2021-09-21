@@ -1,9 +1,9 @@
 const productContainer = document.getElementById('product-container');
 const coverSection = document.getElementById('bg-section');
 const displayProductSection = document.getElementById('display-product');
-const productPriceContainer = document.getElementById('product-price');
+// const productPriceContainer = document.getElementById('product-price');
 const cartContainer = document.getElementById('cart-container');
-const productNameContainer = document.getElementById('product-name');
+// const productNameContainer = document.getElementById('product-name');
 const cartTitle = document.getElementById('cart-title');
 const totalPriceInCart = document.getElementById('total-price');
 const cartDetails = document.getElementById('cart-details');
@@ -143,9 +143,9 @@ const addToCartProduct = (name, price) => {
         const cartItemDiv = document.createElement('div');
         cartItemDiv.innerHTML = `
                 <div class="row">
-                        <div class="col-1"><h6>${totalProductCount}</h6></div>
+                        <div class="col-1 text-center"><h6>${totalProductCount}</h6></div>
                         <div class="col-8"><h6>${name}</h6></div>
-                        <div class="col-3"><h6>$ ${price}</h6></div>
+                        <div class="col-3"><h6>$ ${price ? price : '10'}</h6></div>
                 </div>
                 <hr/>
         `;

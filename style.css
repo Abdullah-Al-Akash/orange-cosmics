@@ -19,6 +19,8 @@ body {
 
 .navbar ul li:hover {
         color: orangered;
+        background: orangered;
+        border-radius: 10px;
         transform: scale(1.15);
         transition: transform 2s;
 }
@@ -98,4 +100,10 @@ body {
 
 .product-price {
         color: darkmagenta;
+}
+
+/* Footer Style Start */
+
+#footer {
+        margin-top: 280px;
 }
