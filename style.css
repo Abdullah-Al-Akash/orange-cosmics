@@ -43,10 +43,25 @@ nav a:hover {
 /* Cover */
 
 .cover {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(images/bg-3.png);
         height: 80vh;
         background-repeat: no-repeat;
         background-size: cover;
+        animation: animate 16s ease-in-out infinite;
+}
+
+@keyframes animate {
+        0%, 100% {
+                background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(images/slide/1.png);
+        }
+        25% {
+                background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(images/slide/2.png);
+        }
+        50% {
+                background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(images/slide/3.png);
+        }
+        75% {
+                background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(images/slide/4.png);
+        }
 }
 
 #items {
