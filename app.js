@@ -173,8 +173,6 @@ const addToCartProduct = (name, price) => {
         `;
         console.log(totalPrice)
 
-        displayBlock(confirmSection);
-
 }
 
 // Confirm Section After Click:
