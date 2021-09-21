@@ -179,13 +179,14 @@ const addToCartProduct = (name, price) => {
 
 // Confirm Section After Click:
 confirmBtn.addEventListener('click', function () {
+        window.scroll(0, 0)
         displayNone(cartContainer);
         displayNone(confirmSection);
         displayBlock(confirmMsg);
         const div = document.createElement('div');
         div.innerHTML = `
                 <div class="d-flex justify-content-center">
-                        <div style="margin-top: 5%">
+                        <div style="margin-top: 10%">
                                 <img class="img-fluid" src="./images/giphy.gif" alt="">
                         </div>
                 </div>
@@ -209,6 +210,12 @@ confirmBtn.addEventListener('click', function () {
         document.getElementById('my-cart').addEventListener('click', () => {
                 displayNone(cartContainer);
                 window.scrollTo(0, 0);
+                displayNone(confirmSection);
+        })
+        document.getElementById('cart-icon').addEventListener('click', () => {
+                displayNone(cartContainer);
+                window.scrollTo(0, 0);
+                displayNone(confirmSection);
         })
 })
 
