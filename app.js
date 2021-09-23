@@ -89,7 +89,7 @@ const singleItem = (url, itemName) => {
 const displaySingleItem = (products, itemName) => {
         // Title Text in BG:
         const readyItems = document.getElementById('ready-items');
-        readyItems.innerHTML = `<span class="orange">${itemName}</span>'s are ready in below...`
+        readyItems.innerHTML = `<span class="orange">${itemName}</span><span class="text-dark">'s are ready in below...</span>`
         productContainer.textContent = '';
         // console.log(products[0].product_colors.length);
         products.forEach((product) => {
@@ -202,6 +202,10 @@ confirmBtn.addEventListener('click', function () {
         confirmMsg.appendChild(div);
         document.getElementById('home').addEventListener('click', () => {
                 location.reload();
+        });
+        document.getElementById('products').addEventListener('click', () => {
+                location.reload();
+                showProducts();
         });
         document.getElementById('logo').addEventListener('click', () => {
                 location.reload();

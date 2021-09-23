@@ -42,7 +42,7 @@
                                                 <li id="home" onclick="displayHomePart()" class="nav-item">
                                                         <a class="nav-link active" aria-current="page">Home</a>
                                                 </li>
-                                                <li onclick="showProducts()" class="nav-item">
+                                                <li id="products" onclick="showProducts()" class="nav-item">
                                                         <a class="nav-link active" aria-current="page"
                                                                 href="#">Products</a>
                                                 </li>
@@ -60,60 +60,14 @@
                 </nav>
 
                 <!-- Background Image -->
-                <section id="bg-section" class="mt-5">
-                        <div class="cover mt-5">
-                                <div class="container h-100 d-flex justify-content-center align-items-center">
-                                        <!-- Set All Button For Single Product Load -->
-                                        <div class="text-center">
-                                                <h1 class="text-center text-white pb-5">Choose Your <span
-                                                                class="orange">Items</span></h1>
-                                                <!-- <div class="text-center pb-3">
-                                                        <img class="img-fluid w-75 rounded-3" src="images/down.png"
-                                                                alt="">
-                                                </div> -->
-                                                <button onclick="singleItem('https://makeup-api.herokuapp.com/api/v1/products.json?product_type=blush', 'Blush')"
-                                                        id="" class="btn btn-danger m-2 fw-bold items"><img
-                                                                src="images/btn-icon/blush.png"> Blush</button>
-                                                <button onclick="singleItem('https://makeup-api.herokuapp.com/api/v1/products.json?product_type=bronzer', 'Bronzer')"
-                                                        id="" class="btn btn-danger m-2 fw-bold items"><img
-                                                                src="images/btn-icon/bronzer.png"> Bronzer</button>
-                                                <button onclick="singleItem('https://makeup-api.herokuapp.com/api/v1/products.json?product_type=eyebrow', 'Eyebrow')"
-                                                        id="" class="btn btn-danger m-2 fw-bold items"><img
-                                                                src="images/btn-icon/eyebrow.png"> Eyebrow</button>
-                                                <button onclick="singleItem('https://makeup-api.herokuapp.com/api/v1/products.json?product_type=eyeliner', 'Eyeliner')"
-                                                        id="" class="btn btn-danger m-2 fw-bold items"><img
-                                                                src="images/btn-icon/eyeliner.png"> Eyeliner</button>
-                                                <button onclick="singleItem('https://makeup-api.herokuapp.com/api/v1/products.json?product_type=eyeshadow', 'Eyeshadow')"
-                                                        id="" class="btn btn-danger m-2 fw-bold items"><img
-                                                                src="images/btn-icon/eyeshadow.png"> Eyeshadow</button>
-                                                <br>
-                                                <button onclick="singleItem('https://makeup-api.herokuapp.com/api/v1/products.json?product_type=foundation', 'Foundation')"
-                                                        id="items" class="btn btn-danger m-2 fw-bold items"><img
-                                                                src="images/btn-icon/foundation.png">
-                                                        Foundation</button>
-                                                <button onclick="singleItem('https://makeup-api.herokuapp.com/api/v1/products.json?product_type=lip_liner', 'Lip liner')"
-                                                        id="" class="btn btn-danger m-2 fw-bold items"><img
-                                                                src="images/btn-icon/lip liner.png"> Lip
-                                                        liner</button>
-                                                <button onclick="singleItem('https://makeup-api.herokuapp.com/api/v1/products.json?product_type=lipstick', 'Lipstick')"
-                                                        id="" class="btn btn-danger m-2 fw-bold items"><img
-                                                                src="images/btn-icon/li[stick.png"> Lipstick</button>
-                                                <button onclick="singleItem('https://makeup-api.herokuapp.com/api/v1/products.json?product_type=mascara', 'Mascara')"
-                                                        id="" class="btn btn-danger m-2 fw-bold items"><img
-                                                                src="images/btn-icon/mascara.png"> Mascara</button>
-                                                <!-- <button onclick="singleItem('https://makeup-api.herokuapp.com/api/v1/products.json?product_type=nail_polish', 'Nail Polish')"
-                                                        id="items" class="btn btn-danger m-2">Nail Polish</button> -->
-                                                <!-- Ready Item After Click -->
-                                                <h4 class="text-white text-center mt-5" id="ready-items"></h4>
-                                        </div>
-                                </div>
-                        </div>
+                <section id="bg-section" class="cover mt-5">
+
                 </section>
         </header>
         <!-- Main Section Start -->
         <main id="main-part" class="container-fluid">
                 <!-- Loader Section -->
-                <section id="loader">
+                <section id="loader" class="mt-5">
                         <div class="d-flex justify-content-center">
                                 <img class="img-fluid" src="images/loader.gif" alt="">
                         </div>
@@ -160,6 +114,53 @@
                 </section>
                 <!-- Display Product -->
                 <section id="display-product" class="container mt-5 pt-5">
+                        <div class="mt-5">
+                                <div class="container h-100 d-flex justify-content-center align-items-center">
+                                        <!-- Set All Button For Single Product Load -->
+                                        <div class="text-center">
+                                                <h1 class="text-center pb-5">Choose Your <span
+                                                                class="orange">Items</span></h1>
+                                                <!-- <div class="text-center pb-3">
+                                                        <img class="img-fluid w-75 rounded-3" src="images/down.png"
+                                                                alt="">
+                                                </div> -->
+                                                <button onclick="singleItem('https://makeup-api.herokuapp.com/api/v1/products.json?product_type=blush', 'Blush')"
+                                                        id="" class="btn btn-danger m-2 fw-bold items"><img
+                                                                src="images/btn-icon/blush.png"> Blush</button>
+                                                <button onclick="singleItem('https://makeup-api.herokuapp.com/api/v1/products.json?product_type=bronzer', 'Bronzer')"
+                                                        id="" class="btn btn-danger m-2 fw-bold items"><img
+                                                                src="images/btn-icon/bronzer.png"> Bronzer</button>
+                                                <button onclick="singleItem('https://makeup-api.herokuapp.com/api/v1/products.json?product_type=eyebrow', 'Eyebrow')"
+                                                        id="" class="btn btn-danger m-2 fw-bold items"><img
+                                                                src="images/btn-icon/eyebrow.png"> Eyebrow</button>
+                                                <button onclick="singleItem('https://makeup-api.herokuapp.com/api/v1/products.json?product_type=eyeliner', 'Eyeliner')"
+                                                        id="" class="btn btn-danger m-2 fw-bold items"><img
+                                                                src="images/btn-icon/eyeliner.png"> Eyeliner</button>
+                                                <button onclick="singleItem('https://makeup-api.herokuapp.com/api/v1/products.json?product_type=eyeshadow', 'Eyeshadow')"
+                                                        id="" class="btn btn-danger m-2 fw-bold items"><img
+                                                                src="images/btn-icon/eyeshadow.png"> Eyeshadow</button>
+                                                <br>
+                                                <button onclick="singleItem('https://makeup-api.herokuapp.com/api/v1/products.json?product_type=foundation', 'Foundation')"
+                                                        id="items" class="btn btn-danger m-2 fw-bold items"><img
+                                                                src="images/btn-icon/foundation.png">
+                                                        Foundation</button>
+                                                <button onclick="singleItem('https://makeup-api.herokuapp.com/api/v1/products.json?product_type=lip_liner', 'Lip liner')"
+                                                        id="" class="btn btn-danger m-2 fw-bold items"><img
+                                                                src="images/btn-icon/lip liner.png"> Lip
+                                                        liner</button>
+                                                <button onclick="singleItem('https://makeup-api.herokuapp.com/api/v1/products.json?product_type=lipstick', 'Lipstick')"
+                                                        id="" class="btn btn-danger m-2 fw-bold items"><img
+                                                                src="images/btn-icon/li[stick.png"> Lipstick</button>
+                                                <button onclick="singleItem('https://makeup-api.herokuapp.com/api/v1/products.json?product_type=mascara', 'Mascara')"
+                                                        id="" class="btn btn-danger m-2 fw-bold items"><img
+                                                                src="images/btn-icon/mascara.png"> Mascara</button>
+                                                <!-- <button onclick="singleItem('https://makeup-api.herokuapp.com/api/v1/products.json?product_type=nail_polish', 'Nail Polish')"
+                                                        id="items" class="btn btn-danger m-2">Nail Polish</button> -->
+                                                <!-- Ready Item After Click -->
+                                                <h4 class="text-white text-center mt-5" id="ready-items"></h4>
+                                        </div>
+                                </div>
+                        </div>
                         <div class="row row-cols-1 row-cols-md-4 row-cols-lg-4 g-5" id="product-container">
                                 <!-- <div class="col">
                                         <div class="h-100 product-card">
