@@ -63,9 +63,9 @@ const displayProduct = (products) => {
                                                 </div>
                                         </div>
                                         <div class="text-center d-flex justify-content-center pb-3" id="product-color-container">
-                                                <p class="product-color" style="background-color: ${firstColor ? firstColor : 'hotpink'}"></p>
-                                                <p class="product-color" style="background-color: ${secondColor}"></p>
-                                                <p class="product-color" style="background-color: ${thirdColor}"></p>
+                                                <p class="product-color" style="background-color: ${firstColor ? firstColor : 'rgb(244, 205, 244)'}"></p>
+                                                <p class="product-color" style="background-color: ${secondColor ? secondColor : 'rgb(244, 183, 183)'}"></p>
+                                                <p class="product-color" style="background-color: ${thirdColor ? thirdColor : 'rgb(239, 244, 183)'}"></p>
                                         </div>
 
                                 </div>
@@ -121,9 +121,9 @@ const displaySingleItem = (products, itemName) => {
                                                 </div>
                                         </div>
                                         <div class="text-center d-flex justify-content-center pb-3" id="product-color-container">
-                                                <p class="product-color" style="background-color: ${firstColor}"></p>
-                                                <p class="product-color" style="background-color: ${secondColor}"></p>
-                                                <p class="product-color" style="background-color: ${thirdColor}"></p>
+                                                <p class="product-color" style="background-color: ${firstColor ? firstColor : 'rgb(244, 205, 244)'}"></p>
+                                                <p class="product-color" style="background-color: ${secondColor ? secondColor : 'rgb(244, 183, 183)'}"></p>
+                                                <p class="product-color" style="background-color: ${thirdColor ? thirdColor : 'rgb(239, 244, 183)'}"></p>
                                         </div>
                                 </div>
                         </div>
