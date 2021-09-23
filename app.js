@@ -23,6 +23,7 @@ const displayBlock = id => {
         id.style.display = 'block';
 }
 // Initially Display None Cart Section:
+displayNone(displayProductSection);
 displayNone(cartContainer);
 displayNone(confirmSection);
 
@@ -219,11 +220,18 @@ confirmBtn.addEventListener('click', function () {
 
 // Home Section:
 const displayHomePart = () => {
+        displayNone(displayProductSection);
         displayNone(cartContainer);
         displayBlock(coverSection);
-        displayBlock(displayProductSection);
         displayNone(confirmSection);
         displayNone(confirmMsg);
 }
 
-// Text Animation:
+// Show Product click in products:
+const showProducts = () => {
+        displayNone(coverSection);
+        displayBlock(displayProductSection);
+        displayNone(confirmSection);
+        displayNone(cartContainer);
+        displayNone(confirmMsg);
+}
