@@ -11,6 +11,8 @@ const confirmSection = document.getElementById('confirm-section');
 const confirmBtn = document.getElementById('confirm-btn');
 const confirmMsg = document.getElementById('confirm-message');
 const loading = document.getElementById('loader');
+// Home Section:
+const homeSection = document.getElementById('home-section');
 
 // Disable Confirm Button:
 confirmBtn.setAttribute('disabled', true);
@@ -139,6 +141,7 @@ const displaySingleItem = (products, itemName) => {
 const myCart = () => {
         displayNone(coverSection);
         displayNone(displayProductSection);
+        displayNone(homeSection);
         displayBlock(cartContainer);
         displayBlock(confirmSection)
 }
@@ -227,6 +230,7 @@ const displayHomePart = () => {
         displayNone(displayProductSection);
         displayNone(cartContainer);
         displayBlock(coverSection);
+        displayBlock(homeSection);
         displayNone(confirmSection);
         displayNone(confirmMsg);
 }
@@ -238,4 +242,5 @@ const showProducts = () => {
         displayNone(confirmSection);
         displayNone(cartContainer);
         displayNone(confirmMsg);
+        displayNone(homeSection);
 }
