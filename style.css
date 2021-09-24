@@ -7,6 +7,17 @@ body {
         font-size: 25px;
 }
 
+#head-btn {
+        background-color: orangered;
+        font-size: 20px;
+}
+
+#head-btn:hover {
+        background-color: black;
+        transform: scale(1.05);
+        transition: transform 2s ease;
+}
+
 h3>img {
         width: 32px;
         height: 35px;
@@ -55,8 +66,19 @@ nav {
 
 /* Cover */
 
+.cover-headline {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center!important;
+}
+
+.cover h1 {
+        font-size: 60px;
+}
+
 .cover {
-        height: 80vh;
+        height: 90vh;
         background-repeat: no-repeat;
         background-size: cover;
         animation: animate 16s ease-in-out infinite;
