@@ -52,6 +52,11 @@ nav {
         height: 500px;
 }
 
+.fa-star {
+        color: gold;
+        font-size: 22px;
+}
+
 /* Loader */
 
 #loader img {
