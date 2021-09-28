@@ -26,7 +26,7 @@
                 <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
                         <div class="container">
                                 <a id="logo" onclick="displayHomePart()" class="navbar-brand">
-                                        <h3> <img src="images/logo.png">range Cosmics</h3>
+                                        <h3> <img src="images/logo.png"> range Cosmics</h3>
                                 </a>
                                 <a id="cart-icon" onclick="myCart()" class="nav-link active text-white"
                                         aria-current="page" href="#"><i class="fas fa-cart-plus"><span class=" orange"
@@ -76,6 +76,12 @@
                         </div>
                 </section>
         </header>
+        <!-- Loader Section -->
+        <section id="loader" class="mt-5 pt-5">
+                <div class="d-flex justify-content-center">
+                        <img class="img-fluid" src="images/loader.gif" alt="">
+                </div>
+        </section>
         <!-- Main Section Start -->
         <main id="main-part" class="">
                 <!-- Home Section -->
@@ -262,12 +268,7 @@
                         </div>
                         <!-- Form Part End -->
                 </section>
-                <!-- Loader Section -->
-                <section id="loader" class="mt-5 pt-5">
-                        <div class="d-flex justify-content-center">
-                                <img class="img-fluid" src="images/loader.gif" alt="">
-                        </div>
-                </section>
+
                 <!-- Confirm Message -->
                 <section id="confirm-message">
 
@@ -314,7 +315,7 @@
                                 <div class="container h-100 d-flex justify-content-center align-items-center">
                                         <!-- Set All Button For Single Product Load -->
                                         <div class="text-center">
-                                                <h1 class="text-center pb-5">Choose Your <span
+                                                <h1 class="text-center pb-5">Select Your <span
                                                                 class="orange">Items</span></h1>
                                                 <!-- <div class="text-center pb-3">
                                                         <img class="img-fluid w-75 rounded-3" src="images/down.png"
@@ -360,7 +361,7 @@
                                                 <!-- <button onclick="singleItem('https://makeup-api.herokuapp.com/api/v1/products.json?product_type=nail_polish', 'Nail Polish')"
                                                         id="items" class="btn btn-danger m-2">Nail Polish</button> -->
                                                 <!-- Ready Item After Click -->
-                                                <h4 class="text-white text-center mt-5" id="ready-items"></h4>
+                                                <h2 class="text-white text-center mt-5 mb-5" id="ready-items"></h2>
                                         </div>
                                 </div>
                         </div>
@@ -386,7 +387,7 @@
         <!-- Main Part Complete -->
         <!-- Footer Part -->
         <footer id="footer" class="text-white container-fluid">
-                <div class="container mt-5 pb-5">
+                <div class="container pb-5">
                         <div class="row d-flex justify-content-between align-items-center">
                                 <div class="col-lg-5 mt-5">
                                         <a style="cursor: pointer;" id="logo" onclick="displayHomePart()">
