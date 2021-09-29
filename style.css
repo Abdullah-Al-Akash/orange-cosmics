@@ -102,21 +102,21 @@ nav {
         height: 90vh;
         background-repeat: no-repeat;
         background-size: cover;
-        animation: animate 16s ease-in-out infinite;
+        animation: animate 16s ease-in infinite;
 }
 
 @keyframes animate {
         0%, 100% {
-                background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(images/slide/1.png);
+                background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://i.ibb.co/QPfKw9D/1-min.png);
         }
         25% {
-                background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(images/slide/2.png);
+                background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://i.ibb.co/74q9KR4/2-min.png);
         }
         50% {
-                background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(images/slide/3.png);
+                background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://i.ibb.co/NpKZdNc/3-min.png);
         }
         75% {
-                background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(images/slide/4.png);
+                background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://i.ibb.co/DDpCjpz/4-min.png);
         }
 }
 
